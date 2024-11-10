@@ -147,59 +147,62 @@ const Home = () => {
 					</div>
 				</div>
 			</div>
-			<div className="hoja hoja2 p-4">
+			<div className=" hoja hoja2 p-4">
 				<div className="container input-group flex-nowrap p-3 ps-5">
 					<span className="input-group-text" id="addon-wrapping">Introduce tareas</span>
-					<input type="text" className="form-control" placeholder="Ejemplo programar 35 horas al dia" />
+					<input type="text" className="form-control" placeholder="Ejemplo programar 35 horas al dia"/>
 				</div>
 				<div>
 					<div className="ps-3 container">
 						<ul><h3 className="p-3 text-center">Tareas pendientes...</h3>
 							{
-								todoList.length === 0 ? (
+								cargaTodoList.length === 0 ? (
 									<p className="text-center">¡No quedan tareas pendientes!</p>
 								) :
-									todoList.map((item, index) => {
+									cargaTodoList.map((item, index) => {
 										return (
-											<h5 key={index}><FontAwesomeIcon
-												icon={faTrash} /> - {item}  </h5>
-										)
-									})}h5
-						</ul>
-					</div>
-					<div className="row p-5 d-flex justify-content-center">
-						<p className="text-end">{todoList.length} tareas restantes </p>
-						<button onClick={() => { limpiarTareas() }} className="col-3  btn btn-primary">Reiniciar lista</button>
-					</div>
-				</div>
-			</div>
-			<div className="hoja hoja1 p-4">
-				<div className="container input-group flex-nowrap p-3 ps-5">
-					<span className="input-group-text" id="addon-wrapping">Introduce tareas</span>
-					<input type="text" className="form-control" placeholder="Ejemplo programar 35 horas al dia" />
-				</div>
-				<div>
-					<div className="ps-3 container">
-						<ul><h3 className="p-3 text-center">Tareas pendientes...</h3>
-							{
-								todoList.length === 0 ? (
-									<p className="text-center">¡No quedan tareas pendientes! </p>
-								) :
-									todoList.map((item, index) => {
-										return (
-											<h5 key={index}><FontAwesomeIcon
-												icon={faTrash} /> - {item}  </h5>
+											<h5 key={index} className="tareapendiente">
+												<input className="form-check-input" type="checkbox" />
+												- {item.label}<FontAwesomeIcon className="eliminar float-end" icon={faTrash} />
+											</h5>
 										)
 									})}
 						</ul>
 					</div>
 					<div className="row p-5 d-flex justify-content-center">
-						<p className="text-end">{todoList.length} tareas restantes </p>
-						<button onClick={() => { limpiarTareas() }} className="col-3  btn btn-primary">Reiniciar lista</button>
+						<p className="text-end">{cargaTodoList.length} tareas restantes </p>
+						<button className="col-3  btn btn-primary">Reiniciar lista</button>
 					</div>
 				</div>
 			</div>
-
+			<div className=" hoja hoja1 p-4">
+				<div className="container input-group flex-nowrap p-3 ps-5">
+					<span className="input-group-text" id="addon-wrapping">Introduce tareas</span>
+					<input type="text" className="form-control" placeholder="Ejemplo programar 35 horas al dia"/>
+				</div>
+				<div>
+					<div className="ps-3 container">
+						<ul><h3 className="p-3 text-center">Tareas pendientes...</h3>
+							{
+								cargaTodoList.length === 0 ? (
+									<p className="text-center">¡No quedan tareas pendientes!</p>
+								) :
+									cargaTodoList.map((item, index) => {
+										return (
+											<h5 key={index} className="tareapendiente">
+												<input className="form-check-input" type="checkbox" />
+												- {item.label}<FontAwesomeIcon className="eliminar float-end" icon={faTrash} />
+											</h5>
+										)
+									})}
+						</ul>
+					</div>
+					<div className="row p-5 d-flex justify-content-center">
+						<p className="text-end">{cargaTodoList.length} tareas restantes </p>
+						<button className="col-3  btn btn-primary">Reiniciar lista</button>
+					</div>
+				</div>
+			</div>
 
 		</div>
 	);
