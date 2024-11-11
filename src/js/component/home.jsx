@@ -73,20 +73,6 @@ const Home = () => {
 			.catch(error => console.log(error));
 	};
 
-	const ReiniciarTodo = () => {
-		fetch(`https://playground.4geeks.com/todo/users/${Usuario}`, {
-			method: "DELETE"
-		})
-			.then(response => {
-				if (response.ok) {
-					cargarTareas();
-				} else {
-					console.log("Error al eliminar la tarea");
-				}
-			})
-			.catch(error => console.log(error))
-	}
-
 	const limpiarTareas = () => {
 		fetch(`https://playground.4geeks.com/todo/users/${Usuario}`, {
 			method: "DELETE",
