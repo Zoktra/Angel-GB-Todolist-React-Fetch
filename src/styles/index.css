@@ -26,13 +26,12 @@ body {
 
 .hoja {
     background-image: url("https://img.freepik.com/vector-gratis/vector-diseno-papel-blanco-blanco_53876-161340.jpg");
-    min-width: 600px;
-    min-height: 600px;
+    height: 700px;
     position: absolute;
-    top: 19%;
-    left : 32%;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    word-wrap: break-word;
+    overflow: auto;
   }
   
   .hoja1 {
